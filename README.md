@@ -87,8 +87,8 @@ Simple To-Do App that help you with your day to day tasks.
 ## Routes
 | Path | Component | Permissions | Behavior | 
 |------|--------|--| -------|
-| `/list` | TodayPageComponent | user only | homepage |
-| `/add-todo` | AddHabitPageComponent | user only | CreateHabitPage - form to add the new habit by title and navigate to TodayPage after creation |
+| `/list` | TodayPageComponent | anon | homepage |
+| `/add-todo` | AddHabitPageComponent | anon | CreateHabitPage - form to add the new habit by title and navigate to TodayPage after creation |
 
 ## Components
 
