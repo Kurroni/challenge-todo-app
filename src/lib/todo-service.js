@@ -3,32 +3,38 @@ import axios from "axios";
 class Todo {
   constructor() {
     this.todo = axios.create({
-      baseURL: process.env.REACT_APP_API_URL +'/todos',
+      baseURL: "http://localhost:4000",
       withCredentials: true
     });
   }
 
   createOne(todoObj) {
     return this.todo
-      .post("/", todoObj) 
+      .post("/todos", todoObj) 
       .then(newTodo=> newTodo.data); 
+  }
+
+  getAll() {
+    return this.todo
+      .get("/todos")
+      .then(allTodos => allTodos.data);
   }
 
   getOne (id) {    
     return this.todo
-      .get(`/${id}`)  
+      .get(`/todos/${id}`)  
       .then(todoObj => todoObj.data) 
   }
 
   updateOne (id, todoObj) {
     return this.todo
-      .put(`/${id}`, todoObj)  
+      .put(`/todos/${id}`, todoObj)  
       .then(newTodo => newTodo.data) 
     }
 
-    deleteOne (id, habitObj) {
-      return this.habit
-      .delete(`/${id}`, habitObj)  
+    deleteOne (id, todoObj) {
+      return this.todoObj
+      .delete(`/todos/${id}`, todoObj)  
       .then() 
   }
 
